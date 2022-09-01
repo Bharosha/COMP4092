@@ -1,0 +1,16 @@
+module BasicRecord where
+import Prelude
+showPerson :: {first:: String, last:: String} -> String
+showPerson { first: x, last: y } = y <> ", " <> x
+showPerson _ = ""
+test1 = showPerson { first: "Phil", last: "Freeman" }
+
+
+________________________________
+
+type person = {first: string; last: string;  };;
+
+let showPerson = function
+  | {first = f; last = l; _} -> f ^ " " ^ l;;
+
+print_string (showPerson {first="matt"; last="roberts"; });;
