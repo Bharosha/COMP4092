@@ -1,0 +1,18 @@
+type HealthInfo = {age :: Int, height :: Int, weight :: Int }
+type StudentInfo = { name :: String, health :: HealthInfo} 
+studentInMq :: StudentInfo -> Boolean
+studentInMq { health: { age: 21 } } = true 
+studentInMq _ = false
+testNested = studentInMq {name :"adam", health: {age: 21 , height : 180, weight : 80 }}
+
+________________________
+
+
+type healthInfo = {age : int; height : int; weight : int };;
+type studentInfo = { name : string; health : healthInfo};;
+
+let studentInMq= function
+  | {health = { age = 21}} -> true
+  | _                        -> false;;
+
+Printf.printf "%b \n" (studentInMq {name="matt"; health={age=21; height=180; weight=70}});;
