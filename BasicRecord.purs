@@ -1,8 +1,11 @@
 module BasicRecord where
 
 import Prelude
-showPerson :: {first:: String, last:: String} -> String
-showPerson { first: x, last: y } = y <> ", " <> x
-showPerson _ = ""
 
-test1 = showPerson { first: "Phil", last: "Freeman" }
+
+showUnit :: {unit_code:: String, unit_name:: String} -> String
+showUnit { unit_code: x, unit_name: y } = y <> ", " <> x
+showUnit _ = ""
+
+testBasicRecord = showUnit {unit_code: "COMP4093", unit_name: "Thesis B"}
+
